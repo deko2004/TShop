@@ -1,0 +1,78 @@
+* {
+  user-select: none;
+  box-sizing: border-box;
+}
+body {
+}
+.shop3adad {
+  padding: 0 8px;
+  position: relative;
+  top: -12px;
+  left: -12px;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999999;
+}
+.searchphone {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 200px;
+}
+.shopicon {
+  position: relative;
+  margin-left: auto;
+}
+.darkbtn {
+  border: solid 1px #fff;
+  &:hover {
+    background-color: #fff;
+    color: #1e1e20;
+  }
+}
+.lightbtn {
+  border: solid 1px #1e1e20;
+  background-color: #fff;
+  color: #1e1e20;
+  &:hover {
+    background-color: #000;
+    color: #fff;
+    transition: 0.2s ease;
+  }
+}
+
+.btnd {
+  border: solid 1px #fff;
+  font-size: 1em;
+}
+
+.btnl {
+  border: solid 1px #1e1e20;
+  font-size: 1em;
+}
+.swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: var(--primary-color) !important;
+}
+.Toastify__toast {
+  height: 50px !important;
+  padding: 0 10px !important;
+}
+@media (max-width: 468px) {
+  .Toastify__toast {
+    margin-bottom: 6px !important;
+    font-size: 14px !important;
+  }
+}
+.Toastify__toast {
+  max-height: 70px !important;
+  overflow: hidden;
+}
