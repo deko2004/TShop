@@ -33,6 +33,7 @@ export default function Product() {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("Description");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const isDark = theme === "dark";
 
   const notify = (message, type = "success") => {
@@ -135,6 +136,10 @@ export default function Product() {
     }
   };
 
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
     <div
       className={`min-h-screen ${
@@ -198,7 +203,11 @@ export default function Product() {
               } p-8 shadow-lg transition-all duration-300 hover:shadow-xl relative`}
             >
               <img
-                src={image}
+                src={
+                  product.images
+                    ? product.images[currentImageIndex]
+                    : product.image
+                }
                 alt={title}
                 className="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
               />
@@ -212,15 +221,16 @@ export default function Product() {
 
             {/* Thumbnail Gallery */}
             <div className="mt-4 grid grid-cols-4 gap-2">
-              {[1, 2, 3, 4].map((item) => (
+              {(product.images || [product.image]).map((img, index) => (
                 <button
-                  key={item}
+                  key={index}
+                  onClick={() => handleImageClick(index)}
                   className={`p-2 rounded-md overflow-hidden ${
                     isDark
                       ? "bg-[#222222] hover:bg-[#2a2a2c]"
                       : "bg-gray-100 hover:bg-gray-200"
                   } border-2 ${
-                    item === 1
+                    index === currentImageIndex
                       ? isDark
                         ? "border-blue-500"
                         : "border-blue-600"
@@ -230,8 +240,8 @@ export default function Product() {
                   } transition-all duration-300`}
                 >
                   <img
-                    src={image}
-                    alt={`${title} view ${item}`}
+                    src={img}
+                    alt={`${title} view ${index + 1}`}
                     className="w-full h-auto object-contain"
                   />
                 </button>

@@ -1,12 +1,15 @@
 import { createContext } from "react";
 import img1 from "../assets/headphone1.webp";
 import img2 from "../assets/headphone2.webp";
+import head2 from "../assets/head2.png";
+import head3 from "../assets/Airpods3.webp";
+
 import img3 from "../assets/headphone4.webp";
 import img4 from "../assets/airpod1.webp";
 import img5 from "../assets/boat203-1.png";
 import img6 from "../assets/sony10.png";
 import img7 from "../assets/keyboard1.webp";
-import img8 from "../assets/souris1.webp";
+import g512 from "../assets/souris1.webp";
 import img9 from "../assets/laptop1.webp";
 import img10 from "../assets/key1.png";
 import img11 from "../assets/laptop2.png";
@@ -14,15 +17,25 @@ import img12 from "../assets/laptop3.png";
 import img13 from "../assets/lapptop4.png";
 import img14 from "../assets/soris1.png";
 import img15 from "../assets/robot1.png";
+import g5121 from "../assets/g502-1.jpg";
+import g5122 from "../assets/g502-2.jpg";
+import g5123 from "../assets/g502-3.jpg";
+import h1 from "../assets/h1.png";
+import swatch from "../assets/smartwatch.png";
+import mac from "../assets/macbook_image.png";
+import canon from "../assets/canon.png";
+import ps5 from "../assets/ps5.png";
+import proj from "../assets/proj.png";
 
 const products = [
   {
     id: 0,
-    title: "Apple AirPods Max Wireless Over-Ear Headphones",
-    image: img1,
+    title: "Apple AirPods Pro 2nd gen",
+    image: h1,
+    images: [h1],
     type: "headphone",
     description:
-      "Experience crystal-clear sound with our AirPods Max Wireless Headphones.",
+      "Apple AirPods Pro (2nd Gen) with MagSafe Case (USB-C) provide excellent sound, active noise cancellation, and a comfortable fit. The USB-C case ensures quick charging, and they pair seamlessly with Apple devices for an effortless audio experience..",
     price: 49.99,
     brand: "Apple",
     category: "Audio & Headphones",
@@ -37,6 +50,7 @@ const products = [
     id: 1,
     title: "HOCO EW54 Noise-Cancelling",
     image: img2,
+    images: [img2, img1, head2, head3],
     type: "headphone",
     description:
       "Immerse yourself in pure sound with our HOCO EW54 noise-cancelling headphones.",
@@ -54,6 +68,7 @@ const products = [
     id: 2,
     title: "AirPods 3 True Wireless Earbuds",
     image: img3,
+    images: [img3],
     type: "headphone",
     description:
       "Enjoy seamless music streaming with our AirPods 3 true wireless earbuds.",
@@ -71,6 +86,7 @@ const products = [
     id: 3,
     title: "HOCO EW61 Over-Ear Headphones",
     image: img4,
+    images: [img4],
     type: "airphone",
     description:
       "Get lost in your favorite tunes with our HOCO EW61 over-ear headphones.",
@@ -88,6 +104,7 @@ const products = [
     id: 4,
     title: "HOCO EW54 Sports Headphones",
     image: img5,
+    images: [img5],
     type: "airphone",
     description:
       "Stay motivated during your workouts with our HOCO EW54 sports headphones.",
@@ -105,6 +122,7 @@ const products = [
     id: 5,
     title: "Sony Wireless Headphones",
     image: img6,
+    images: [img6],
     type: "airphone",
     description:
       "Experience immersive sound with our Sony wireless headphones.",
@@ -122,6 +140,7 @@ const products = [
     id: 6,
     title: "Gaming Keyboard",
     image: img7,
+    images: [img7],
     type: "accessories",
     description:
       "Improve your gaming performance with our high-quality gaming keyboard.",
@@ -138,7 +157,8 @@ const products = [
   {
     id: 7,
     title: "Gaming Mouse",
-    image: img8,
+    image: g512,
+    images: [g512, g5121, g5123, g5122],
     type: "accessories",
     description:
       "Improve your gaming performance with our high-quality gaming mouse.",
@@ -156,6 +176,7 @@ const products = [
     id: 8,
     title: "Dell Inspiron 15",
     image: img9,
+    images: [img9],
     type: "laptop",
     description:
       "Improve your gaming performance with our high-quality gaming laptop.",
@@ -173,6 +194,7 @@ const products = [
     id: 9,
     title: "Gaming Keyboard",
     image: img10,
+    images: [img10],
     type: "accessories",
     description:
       "Improve your gaming performance with our high-quality gaming keyboard.",
@@ -191,6 +213,7 @@ const products = [
     id: 10,
     title: "MacBook Pro 16-inch",
     image: img11,
+    images: [img11],
     type: "laptop",
     description:
       "The MacBook Pro 16-inch delivers powerful performance with the Apple M2 Pro or M2 Max chip, a stunning Retina display, and long battery life.",
@@ -209,6 +232,7 @@ const products = [
     id: 11,
     title: "Asus ROG Zephyrus G14",
     image: img12,
+    images: [img12],
     type: "laptop",
     description:
       "The Asus ROG Zephyrus G14 gaming laptop features an AMD Ryzen 9 processor, NVIDIA RTX 4060 graphics, and a 165Hz display for ultra-smooth performance.",
@@ -227,6 +251,7 @@ const products = [
     id: 12,
     title: "MacBook Air 13-inch",
     image: img13,
+    images: [img13],
     type: "laptop",
     description:
       "The MacBook Air 13-inch with the M2 chip offers fast performance, a sleek design, and a high-resolution Liquid Retina display.",
@@ -244,6 +269,7 @@ const products = [
     id: 13,
     title: "Logitech MX Master 3S",
     image: img14,
+    images: [img14],
     type: "accessories",
     description:
       "Advanced wireless mouse with ergonomic design and precise tracking.",
@@ -261,6 +287,7 @@ const products = [
     id: 14,
     title: "Eilic Robot",
     image: img15,
+    images: [img15],
     type: "accessories",
     description:
       " Smart robot with advanced AI features and interactive capabilities.",
@@ -273,6 +300,96 @@ const products = [
     dimensions: "4.9 x 3.3 x 2.0 in",
     weight: "0.2 lbs",
     reviews: 25,
+  },
+  {
+    id: 15,
+    title: "Garmin Venu 2",
+    image: swatch,
+    images: [swatch],
+    type: "accessories",
+    description:
+      " The Garmin Venu 2 smartwatch blends advanced fitness tracking with sophisticated design, offering a wealth of features such as heart rate monitoring, GPS, and sleep tracking. Built with a 24-hour battery life, this watch is ideal for fitness enthusiasts and anyone looking to enhance their daily lifestyle. With a stunning AMOLED display and customizable watch faces, the Venu 2 combines technology with style seamlessly.",
+    price: 349.99,
+    brand: "Garmin",
+    category: "Accessories",
+    rating: 4.5,
+    stock: 10,
+    sku: "LOG-MX3S",
+    dimensions: "4.9 x 3.3 x 2.0 in",
+    weight: "0.2 lbs",
+    reviews: 13,
+  },
+  {
+    id: 16,
+    title: "MacBook Pro 16",
+    image: mac,
+    images: [mac],
+    type: "Laptop",
+    description:
+      " The MacBook Pro 16, powered by Apple's M2 Pro chip, offers outstanding performance with 16GB RAM and a 512GB SSD. Whether you're editing high-resolution video, developing software, or multitasking with ease, this laptop can handle the toughest tasks. It features a stunning Retina display with True Tone technology, making it a top choice for professionals in creative industries or anyone who demands premium performance in a portable form.",
+    price: 2249.99,
+    brand: "Apple",
+    category: "Laptop",
+    rating: 4.5,
+    stock: 10,
+    sku: "LOG-MX3S",
+    dimensions: "4.9 x 3.3 x 2.0 in",
+    weight: "0.2 lbs",
+    reviews: 13,
+  },
+  {
+    id: 17,
+    title: "Canon EOS R5",
+    image: canon,
+    images: [canon],
+    type: "Accessories",
+    description:
+      " The Canon EOS R5 is a game-changing mirrorless camera with a 45MP full-frame sensor, offering ultra-high resolution and the ability to shoot 8K video. Whether you're capturing professional-quality stills or cinematic video footage, this camera delivers exceptional clarity, speed, and color accuracy. With advanced autofocus and in-body stabilization, the R5 is ideal for photographers and videographers alike.",
+    price: 1499.99,
+    brand: "Canon",
+    category: "camera",
+    rating: 4.5,
+    stock: 10,
+    sku: "LOG-MX3S",
+    dimensions: "4.9 x 3.3 x 2.0 in",
+    weight: "0.2 lbs",
+    reviews: 13,
+  },
+  {
+    id: 18,
+    title: "PlayStation 5",
+    image: ps5,
+    images: [ps5],
+    type: "Laptop",
+    description:
+      "The PlayStation 5 takes gaming to the next level with ultra-HD graphics, a powerful 825GB SSD, and ray tracing technology for realistic visuals. Whether you're into high-action games or immersive storytelling, the PS5 delivers fast loading times, seamless gameplay, and stunning visuals. It's a must-have for any serious gamer looking for the ultimate gaming experience.",
+    price: 599.99,
+    brand: "Sony",
+    category: "Laptop",
+    rating: 4.5,
+    stock: 10,
+    sku: "LOG-MX3S",
+    dimensions: "4.9 x 3.3 x 2.0 in",
+    weight: "0.2 lbs",
+    reviews: 13,
+  },
+  {
+    id: 19,
+    title: "Samsung Projector 4k",
+    image: proj,
+    images: [proj],
+    type: "Accessories",
+    description:
+      "The Samsung 4K Projector offers an immersive cinematic experience with ultra-high-definition visuals and realistic color accuracy. Equipped with a built-in speaker, it delivers rich sound quality to complement its stunning 4K resolution. Perfect for movie nights, gaming, or presentations, this projector is the ultimate choice for creating an at-home theater experience or professional setting.",
+    price: 79.99,
+    brand: "Samsung",
+    category: "Accessories",
+    rating: 4.5,
+    stock: 10,
+    sku: "LOG-MX3S",
+    dimensions: "4.9 x 3.3 x 2.0 in",
+    weight: "0.2 lbs",
+    reviews: 13,
   },
 ];
 
